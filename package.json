@@ -13,7 +13,7 @@
 
   },
   "scripts": {
-    "start": "npm install typescript && npm install tsc &&  yarn build && node build/src/index.js",
+    "start": "npm install npx  &&  yarn build && node build/src/index.js",
     "dev": "npx ts-node-dev --respawn --transpile-only --ignore-watch node_modules ./src/index.ts",
     "build": "npx tsc",
     "lint": "eslint . --ext .ts",
