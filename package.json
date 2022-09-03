@@ -12,7 +12,8 @@
 
   },
   "scripts": {
-    "start": "npx ts-node-dev --respawn --transpile-only --ignore-watch node_modules ./src/index.ts",
+    "start": "yarn build && node dist/index.js",
+    "dev": "npx ts-node-dev --respawn --transpile-only --ignore-watch node_modules ./src/index.ts",
     "build": "npx tsc",
     "lint": "eslint . --ext .ts",
     "format:check": "prettier --check .",
