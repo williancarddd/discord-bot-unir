@@ -4,6 +4,7 @@ import {
   ClientEvents,
   Collection
 } from "discord.js";
+import {Player} from "discord-player"
 import { CommandType } from "../interfaces/commands";
 import { RegisterCommandsOptions } from "../interfaces/client";
 import { Event } from "./Event";
@@ -11,9 +12,27 @@ import { getFilePathPerNameFolder } from "../utils/getFilePathPerNameFolder";
 
 export class ClientDiscord extends Client {
   commands: Collection<string, CommandType> = new Collection();
-
+  player?: Player;
   constructor() {
-      super({ intents: 32767 });
+      super({ intents: [
+        "DirectMessageReactions",
+        "DirectMessages",
+        "DirectMessageReactions",
+        "GuildBans",
+        "GuildInvites",
+        "GuildMembers",
+        "GuildMessages",
+        "GuildMessageReactions",
+        "Guilds",
+        "GuildVoiceStates",
+        "MessageContent"
+      ]});
+    this.player =  new Player(this, {
+        ytdlOptions: {
+          quality: "highestaudio",
+          highWaterMark: 1 << 25
+      }
+      })
   }
 
   start() {

@@ -9,7 +9,6 @@ export async function getFilePathPerNameFolder(nameFolder: string): Promise<stri
   const fileNames =  await globPromise(`./src/${nameFolder}/**/*.{ts,js}`, { ignore: "**/node_modules/**" });
   //transforma in absoltue path
   const filePaths = fileNames.map(fileName => path.resolve(fileName));
-  console.log(filePaths);
   return filePaths;
 }
 

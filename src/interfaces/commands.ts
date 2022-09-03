@@ -1,4 +1,4 @@
-import { ChatInputApplicationCommandData, CommandInteraction, CommandInteractionOptionResolver, GuildMember, PermissionResolvable } from 'discord.js'
+import { ChatInputApplicationCommandData, CommandInteraction, CommandInteractionOptionResolver, GuildMember, Options, PermissionResolvable } from 'discord.js'
 import { ClientDiscord  } from '../structures/Client'
 
 /*
