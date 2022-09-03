@@ -6,11 +6,10 @@ export default new Command({
   description: "skip the current song",
   run: async ({client, interaction}) => {
     const queue = client.player?.getQueue(interaction.guildId!);
-    if(!queue || !queue.playing) {
-      return await interaction.editReply({content: "No music is being played!"});
-    }
+    if(!queue ) return await interaction.editReply({content: "No music is being played!"});
+  
     const currentSong = queue.current;
-    queue.destroy();
+    queue.skip();
     return await interaction.editReply({
       embeds: [
         new EmbedBuilder()

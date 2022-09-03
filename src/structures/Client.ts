@@ -60,7 +60,7 @@ export class ClientDiscord extends Client {
       commandFiles.forEach(async (filePath) => {
               const command: CommandType = await this.importFile(filePath);
               if (!command.name) return;
-              console.log(command);
+              console.log(command.name);
     
               this.commands.set(command.name, command);
               slashCommands.push(command);

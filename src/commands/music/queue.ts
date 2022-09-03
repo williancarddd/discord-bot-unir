@@ -27,7 +27,6 @@ export default new Command({
     const queueString = queue.tracks.slice(page * 10, page *10 + 10).map((song, index) => {
       return `**${page * 10 + index + 1}.** \`[${song.duration}]\` ${song.title} -- <@${song.requestedBy.id}>\n`;
     }).join("\n");
-    console.log(queueString);
     const currentSong  = queue.current;
 
     await interaction.editReply({

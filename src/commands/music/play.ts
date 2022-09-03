@@ -36,6 +36,14 @@ export default new Command({
         name: "search",
         description: "searches for a song on youtube",
         type: ApplicationCommandOptionType.Subcommand,
+        options: [
+          {
+            name: "searchterms",
+            description: "name to search music",
+            type: ApplicationCommandOptionType.String,
+            required: true,
+          }
+        ]
         },
     ],
     run: async ({client, interaction}) => {
