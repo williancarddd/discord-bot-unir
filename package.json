@@ -12,7 +12,7 @@
 
   },
   "scripts": {
-    "start": "node build/index.js",
+    "start": "node build/src/index.js",
     "dev": "npx ts-node-dev --respawn --transpile-only --ignore-watch node_modules ./src/index.ts",
     "build": "npx tsc",
     "lint": "eslint . --ext .ts",
