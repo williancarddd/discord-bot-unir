@@ -56,8 +56,8 @@ export default new Command({
       })
 
     const queue = client.player?.createQueue(interaction.guildId!)
-    // @ts-ignore
     if (!queue?.connection)
+      // @ts-ignore
       await queue?.connect(interaction.member.voice.channel)
 
     const embed = new EmbedBuilder()

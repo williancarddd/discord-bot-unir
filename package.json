@@ -7,8 +7,13 @@
   "author": "William Cardoso <williancard123@gmail.com>",
   "license": "MIT",
   "private": false,
+  "engines": {
+    "node": ">=16.0.0"
+
+  },
   "scripts": {
     "start": "npx ts-node-dev --respawn --transpile-only --ignore-watch node_modules ./src/index.ts",
+    "build": "npx tsc",
     "lint": "eslint . --ext .ts",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
