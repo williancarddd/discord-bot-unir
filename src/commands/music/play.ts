@@ -65,7 +65,7 @@ export default new Command({
       const url = interaction.options.getString('url')
       const result = await client.player?.search(url!, {
         requestedBy: interaction.user,
-        searchEngine: QueryType.YOUTUBE_VIDEO,
+        searchEngine: QueryType.AUTO,
       })
       if (result?.tracks.length === 0)
         return await interaction.editReply({ content: 'No results found!' })
@@ -82,7 +82,7 @@ export default new Command({
       const url = interaction.options.getString('url')
       const result = await client.player?.search(url!, {
         requestedBy: interaction.user,
-        searchEngine: QueryType.YOUTUBE_PLAYLIST,
+        searchEngine: QueryType.AUTO,
       })
       if (result?.tracks.length === 0)
         return await interaction.editReply({ content: 'No results found!' })
