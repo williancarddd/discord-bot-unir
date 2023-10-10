@@ -1,7 +1,13 @@
-import dotenv from 'dotenv'
-dotenv.config()
+import { ExtendedClient } from "./structs/ExtendedClient";
+export * from "colors";
 
-import { ClientDiscord } from './structures/Client'
 
-export const client = new ClientDiscord()
-client.start()
+const client = new ExtendedClient();
+
+client.start();
+
+client.on("ready", () => {
+    console.log("Bot Online.".green)
+})
+
+export {client};

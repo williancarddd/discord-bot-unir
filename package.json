@@ -1,47 +1,23 @@
 {
-  "name": "DiscordBotUnir",
+  "name": "discord-bot-unir",
   "version": "1.0.0",
-  "description": "Bot voltado para o servidor de ciência da computação da unir",
-  "main": "index.ts",
-  "repository": "https://github.com/williancarddd/discord-bot-unir",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc src/index.ts",
+    "start": "tsc src/index.ts && node ."
+  },
+  "repository": "https://github.com/williancarddd/discord-bot-unir.git",
   "author": "William Cardoso <williancard123@gmail.com>",
   "license": "MIT",
-  "private": false,
-  "engines": {
-    "node": ">=16.0.0",
-    "yarn": ">=1.22.0"
-  },
-  "scripts": {
-    "start": "npx ts-node-dev --respawn --transpile-only --ignore-watch node_modules ./src/index.ts",
-    "lint": "eslint . --ext .ts",
-    "format:check": "prettier --check .",
-    "format:write": "prettier --write .",
-    "lint:check": "eslint .",
-    "lint:fix": "eslint --fix ."
+  "devDependencies": {
+    "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@discordjs/opus": "^0.8.0",
-    "discord-player": "^5.3.1",
-    "discord.js": "^14.3.0",
-    "dotenv": "^16.0.2",
-    "ffmpeg-static": "^5.1.0",
-    "glob": "^8.0.3",
-    "glob-promise": "^5.0.0",
-    "install": "^0.13.0"
-  },
-  "devDependencies": {
-    "@types/glob": "^8.0.0",
-    "@types/node": "^18.7.14",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.36.1",
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^22.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "prettier": "^2.7.1",
-    "ts-node": "^10.9.1",
-    "typescript": "*"
+    "colors": "^1.4.0",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "ts-lib": "^0.0.5",
+    "ts-node": "^10.9.1"
   }
 }
